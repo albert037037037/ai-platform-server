@@ -1,0 +1,11 @@
+stages:
+  - lint
+
+lint:
+  image: node:14.15
+  stage: lint
+  tags:
+    - "k8s-runner"
+  script:
+    - npm install
+    - npm run lint

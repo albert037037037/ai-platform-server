@@ -1,0 +1,16 @@
+version: "3.9"
+services:
+  mongo:
+    container_name: jerry-ai-platform-mongo
+    image: mongo:4.4
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=password
+    volumes:
+      - jerry-ai-platform-mongo:/data/db
+    ports:
+      - 27017:27017
+    restart: on-failure
+    command: mongod
+volumes:
+  jerry-ai-platform-mongo:

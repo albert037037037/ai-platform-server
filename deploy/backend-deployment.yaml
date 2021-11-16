@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jerry-ai-platform
+  namespace: backend
+  labels:
+    app: node-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: node-app
+  template:
+    metadata:
+      labels:
+        app: node-app 
+    spec:
+      containers:
+      - name: node-app
+        image: albert037037037/jerry-ai-platform:v0.3.4
+        ports:
+        - containerPort: 7001
+        imagePullPolicy: Always

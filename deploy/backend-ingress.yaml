@@ -1,0 +1,18 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: node-ingress # Name whatever you want
+  namespace: backend
+  annotations: 
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
+spec:
+  ingressClassName: "nginx" # For k8s < v1.18
+  rules:
+  - host: api.ai-platform.org
+    http:
+      paths:
+      - path: /backend(/|$)(.*)
+        pathType: Prefix
+        backend:
+          serviceName: node-app-service
+          servicePort: 80
