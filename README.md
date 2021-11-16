@@ -6,8 +6,8 @@ Since Machine Learning code is just a small part of the ML production system, we
 ## Features and advantages
 1. MLOps for end-to-end ML pipeline
 2. Monitoring (resource usage, job...)
-3. Resource sharing(CPU, memory, GPU), management 4, Data and model sharing with ACL
+3. Resource sharing(CPU, memory, GPU), management 
+4. Data and model sharing with ACL
 5. Support multi-tenants
 6. Container management with Kubernetes
-7. 
 ### This github project is backend part.
